@@ -21,4 +21,16 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+
+Route::get('/home', function () {
+    return "This is the home page";
+});
+
+Route::get('/home/{name}', function ($name) {
+    return "This is $name's page";
+});
+
+Route::get('/home/{name}/{age}', function ($name, $age) {
+    return "This is $name's page they are $age years old";
+});
 require __DIR__.'/auth.php';
