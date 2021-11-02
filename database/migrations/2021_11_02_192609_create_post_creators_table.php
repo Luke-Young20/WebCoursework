@@ -14,10 +14,13 @@ class CreatePostCreatorsTable extends Migration
     public function up()
     {
         Schema::create('post_creators', function (Blueprint $table) {
-            $table->id();
-            $table->string('title');
-            $table->string('content');
+            $table->increments('id');
+            $table->string('name');
+            $table->bigInteger('post_id')->unsigned()->nullable();
+            //$table->string('content');
             $table->timestamps();
+
+            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

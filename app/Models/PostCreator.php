@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class PostCreator extends Model
 {
     
-    public function Poster()
+    public function post()
     {
-        return $this->hasMany('App\Models\Post');
+        return $this->belongsTo('App\Models\Post');
     }
     use HasFactory;
 }

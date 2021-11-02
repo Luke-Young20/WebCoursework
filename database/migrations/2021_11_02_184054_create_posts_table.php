@@ -19,9 +19,6 @@ class CreatePostsTable extends Migration
             $table->string('content');
             $table->dateTime('date_of_posting')->nullable();
             $table->timestamps();
-
-            $table->foreign('PostCreator.id')->references('id')->on('PostCreator')->onDelete('cascade')->onUpdate('cascade');
-
         });
     }
 

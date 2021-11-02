@@ -18,6 +18,6 @@ class PostTableSeeder extends Seeder
         $a->content = "my first post";
         $a->save();
 
-        $animals = Post::factory()->count(10)->create();
+        $posts = Post::factory()->count(10)->create();
     }
 }
