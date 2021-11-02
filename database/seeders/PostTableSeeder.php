@@ -16,7 +16,6 @@ class PostTableSeeder extends Seeder
         $a = new Post;
         $a->title = "First Post";
         $a->content = "my first post";
-       // $a->date_of_posting = timestamps;
         $a->save();
 
         $animals = Post::factory()->count(10)->create();
