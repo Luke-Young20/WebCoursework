@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {    
     
-    public function postCreator()
+    public function postCreators()
     {
         return $this->hasMany('App\Models\PostCreator');
     }
