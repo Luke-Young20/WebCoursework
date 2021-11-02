@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\PostCreator;
 
 class PostCreatorTableSeeder extends Seeder
 {
@@ -15,7 +16,9 @@ class PostCreatorTableSeeder extends Seeder
     {
         $e = new PostCreator;
         $e->name = 'Max';
-        $e->posts_id = 1;
+        $e->post_id = 1; 
         $e->save();
+
+        $postcreators = PostCreator::factory()->count(10)->create();
     }
 }

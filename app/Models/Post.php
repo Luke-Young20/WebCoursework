@@ -10,7 +10,7 @@ class Post extends Model
     
     public function postCreator()
     {
-        return $this->hasOne('App\Models\PostCreator');
+        return $this->hasMany('App\Models\PostCreator');
     }
     use HasFactory;
 }
