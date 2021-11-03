@@ -16,7 +16,7 @@ class PostTableSeeder extends Seeder
         $a = new Post;
         $a->title = "First Post";
         $a->content = "my first post";
-        $a->post_id =1;
+       // $a->post_id =1;
         $a->save();
 
         $posts = Post::factory()->count(10)->create();
