@@ -12,5 +12,10 @@ class Author extends Model
         return $this->hasMany('App\Models\Post');
     }
 
+    public function comments()
+    {
+        return $this->hasMany('App\Models\Comment');
+    }
+
     use HasFactory;
 }

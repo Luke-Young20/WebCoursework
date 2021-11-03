@@ -5,18 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model
-{    
-    
-    public function authors()
+class Comment extends Model
+{
+
+    public function commentAuthor()
     {
         return $this->belongsTo('App\Models\Author');
     }
 
-    public function postComments()
+    public function commentPost()
     {
-        return $this->hasMany('App\Models\Comment');
+        return $this->belongsTo('App\Models\Post');
     }
+
 
     use HasFactory;
 }
