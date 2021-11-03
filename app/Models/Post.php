@@ -10,7 +10,7 @@ class Post extends Model
     
     public function authors()
     {
-        return $this->hasOne('App\Models\Author');
+        return $this->belongsTo('App\Models\Author');
     }
     use HasFactory;
 }
