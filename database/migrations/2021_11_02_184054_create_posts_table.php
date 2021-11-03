@@ -18,7 +18,7 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->string('content');
            // $table->dateTime('date_of_posting')->nullable();
-            $table->bigInteger('post_id')->unsigned()->nullable();
+            $table->bigInteger('post_id')->unsigned()/*->nullable()*/;
             $table->timestamps();
         });
     }
