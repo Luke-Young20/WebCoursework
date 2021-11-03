@@ -17,9 +17,11 @@ class CreatePostsTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->string('content');
-           // $table->dateTime('date_of_posting')->nullable();
-           // $table->bigInteger('post_id')->unsigned()/*->nullable()*/;
+            $table->dateTime('date_of_posting')->nullable();
+            $table->bigInteger('author_id')->unsigned();
             $table->timestamps();
+
+            $table->foreign('author_id')->references('id')->on('authors')->onDelete('cascade')->onUpdate('cascade');
 
         });
     }

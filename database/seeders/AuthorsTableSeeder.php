@@ -15,7 +15,12 @@ class AuthorsTableSeeder extends Seeder
     {
         $e = new Author;
         $e->name = 'John';
-        $e->post_id = 1;
+        //e->author_id = 1;
+        $e->save();
+
+        $e = new Author;
+        $e->name = 'James';
+      //  $e->post_id = 2;
         $e->save();
 
         //$authors = Author::factory()->count(10)->create();

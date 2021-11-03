@@ -16,6 +16,7 @@ class PostFactory extends Factory
         return [
             'title' => $this->faker->firstName(),
             'content' => $this->faker->sentence,
+            'author_id' => 1
         ];
     }
 }
