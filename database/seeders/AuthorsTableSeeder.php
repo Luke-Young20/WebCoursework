@@ -13,10 +13,11 @@ class AuthorsTableSeeder extends Seeder
      */
     public function run()
     {
-       // $a = new Author;
-       // $a->name = "Jimmy";
-       // $a->save();
+        $e = new Author;
+        $e->name = 'John';
+        $e->post_id = 1;
+        $e->save();
 
-        $authors = Author::factory()->count(10)->create();
+        //$authors = Author::factory()->count(10)->create();
     }
 }

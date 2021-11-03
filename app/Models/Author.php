@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Author extends Model
 {
-    public function authors()
+    public function posts()
     {
-        return $this->hasMany('App\Models\Post');
+        return $this->belongsTo('App\Models\Post');
     }
 
     use HasFactory;

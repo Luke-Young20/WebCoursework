@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {    
     
-    public function postCreators()
+    public function authors()
     {
-        return $this->hasMany('App\Models\Author');
+        return $this->hasOne('App\Models\Author');
     }
     use HasFactory;
 }
