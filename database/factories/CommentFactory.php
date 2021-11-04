@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class AuthorFactory extends Factory
+class CommentFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -14,8 +14,9 @@ class AuthorFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->firstName(),
-          //  'author_id' => $this->faker->numberBetween($min = 1, $max = 10),
+            'commentText' => $this->faker->sentence(),
+            'author_id' => $this->faker->numberBetween($min = 1, $max = 15),
+            'post_id' => $this->faker->numberBetween($min = 1, $max = 25),
         ];
     }
 }

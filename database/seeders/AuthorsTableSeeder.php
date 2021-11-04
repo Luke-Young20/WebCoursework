@@ -13,7 +13,7 @@ class AuthorsTableSeeder extends Seeder
      */
     public function run()
     {
-        $e = new Author;
+  /*      $e = new Author;
         $e->name = 'John';
         //e->author_id = 1;
         $e->save();
@@ -22,7 +22,8 @@ class AuthorsTableSeeder extends Seeder
         $e->name = 'James';
       //  $e->post_id = 2;
         $e->save();
+        */
 
-        //$authors = Author::factory()->count(10)->create();
+        $authors = Author::factory()->count(15)->create();
     }
 }

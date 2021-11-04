@@ -16,7 +16,7 @@ class PostFactory extends Factory
         return [
             'title' => $this->faker->firstName(),
             'content' => $this->faker->sentence,
-            'author_id' => 1
+            'author_id' => $this->faker->numberBetween($min = 1, $max = 15),
         ];
     }
 }
