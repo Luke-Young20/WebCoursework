@@ -16,11 +16,8 @@ class CreateAuthorsTable extends Migration
         Schema::create('authors', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-         //   $table->bigInteger('post_id')->unsigned();
             $table->timestamps();
 
-     //       $table->foreign('post_id')->references('id')->on('posts')
-     //       ->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
