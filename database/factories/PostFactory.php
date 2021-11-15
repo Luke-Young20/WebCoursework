@@ -16,6 +16,7 @@ class PostFactory extends Factory
         return [
             'title' => $this->faker->word(),
             'content' => $this->faker->sentence,
+            //make this a variable
             'author_id' => $this->faker->numberBetween($min = 1, $max = 15),
         ];
     }
