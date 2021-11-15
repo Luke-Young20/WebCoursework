@@ -15,7 +15,6 @@ class AuthorFactory extends Factory
     {
         return [
             'name' => $this->faker->firstName(),
-          //  'author_id' => $this->faker->numberBetween($min = 1, $max = 10),
         ];
     }
 }
