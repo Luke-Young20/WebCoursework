@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Author;
 
 class PostFactory extends Factory
 {
@@ -16,8 +17,9 @@ class PostFactory extends Factory
         return [
             'title' => $this->faker->word(),
             'content' => $this->faker->sentence,
+            'author_id' => Author::all()->first()->id,
             //make this a variable
-            'author_id' => $this->faker->numberBetween($min = 1, $max = 15),
+            //'author_id' => $this->faker->numberBetween($min = 1, $max = 15),
         ];
     }
 }
