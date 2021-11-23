@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {    
+    use HasFactory;
     
     public function authors()
     {
@@ -18,5 +19,5 @@ class Post extends Model
         return $this->hasMany('App\Models\Comment');
     }
 
-    use HasFactory;
+   
 }

@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model
 {
-
+    use HasFactory;
+    
     public function commentAuthor()
     {
         return $this->belongsTo('App\Models\Author');
@@ -18,5 +19,5 @@ class Comment extends Model
         return $this->belongsTo('App\Models\Post');
     }
 
-    use HasFactory;
+   
 }
