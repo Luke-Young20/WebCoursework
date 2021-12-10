@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AuthorController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/authors/{author?}', function ($author = null) {
+Route::get('/postauthor/{author?}', function ($author = null) {
     return view ('author', ['author'=>$author]);
 });
 
@@ -29,6 +29,8 @@ Route::get('/dashboard', function () {
 Route::get('/home', function () {
     return "This is the home page";
 });
+
+Route::get('/authors', [AuthorController::class, 'index']);
 
 Route::get('/home/{name}', function ($name) {
     return "This is $name's page";
