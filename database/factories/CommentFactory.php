@@ -17,10 +17,10 @@ class CommentFactory extends Factory
     {
         return [
             'commentText' => $this->faker->sentence(),
-            //'author_id' => $this->faker->numberBetween($min = 1, $max = 15),
-            'author_id' => Author::all()->first()->id, 
-            'post_id' => Post::all()->first()->id, 
-            //'post_id' => $this->faker->numberBetween($min = 1, $max = 25),
+            'author_id' => $this->faker->numberBetween($min = 1, $max = Author::all()->count()),
+            //'author_id' => Author::all()->first()->id, 
+            //'post_id' => Post::all()->first()->id, 
+            'post_id' => $this->faker->numberBetween($min = 1, $max = Author::all()->count()),
         ];
     }
 }

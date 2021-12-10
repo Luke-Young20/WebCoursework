@@ -7,14 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {    
+  
     use HasFactory;
     
-    public function authors()
+    public function author()
     {
         return $this->belongsTo('App\Models\Author');
     }
 
-    public function postComments()
+    public function comments()
     {
         return $this->hasMany('App\Models\Comment');
     }

@@ -9,12 +9,12 @@ class Comment extends Model
 {
     use HasFactory;
     
-    public function commentAuthor()
+    public function author()
     {
         return $this->belongsTo('App\Models\Author');
     }
 
-    public function commentPost()
+    public function post()
     {
         return $this->belongsTo('App\Models\Post');
     }
