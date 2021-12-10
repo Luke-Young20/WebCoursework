@@ -1,7 +1,7 @@
 @extends('layouts.authorlayout')
 
 @section('title')
-    Authors
+    A list of all Authors
 @endsection
 
 @section('content')

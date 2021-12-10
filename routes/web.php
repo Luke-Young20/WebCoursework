@@ -31,6 +31,7 @@ Route::get('/home', function () {
 });
 
 Route::get('/authors', [AuthorController::class, 'index']);
+Route::get('/authors/{id}',[AuthorController::class, 'show']);
 
 Route::get('/home/{name}', function ($name) {
     return "This is $name's page";

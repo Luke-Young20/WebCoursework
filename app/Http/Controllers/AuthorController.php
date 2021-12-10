@@ -47,7 +47,8 @@ class AuthorController extends Controller
      */
     public function show($id)
     {
-        //
+        $author = Author::findOrFail($id);
+        return view('authors.show', ['author' => $author]);
     }
 
     /**
