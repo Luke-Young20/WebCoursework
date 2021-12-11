@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\Author;
 class PostController extends Controller
 {
     /**
@@ -24,7 +25,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+        $authors = Author::orderBy('name', 'asc')->get();
+        return view('posts.create', ['authors' => $authors]);
 
  
 
@@ -60,7 +62,7 @@ class PostController extends Controller
     $a->author_id = $validatedData['author_id'];
     $a->save();
 
-    session()->flash('message', 'post successfully created.');
+    session()->flash('message', 'Post successfully created.');
     return redirect()->route('posts.index');
   
  /**
