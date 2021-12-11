@@ -32,10 +32,10 @@ Route::get('/home', function () {
 });
 
 Route::get('/authors', [AuthorController::class, 'index']);
-Route::get('/authors/{id}',[AuthorController::class, 'show']);
+Route::get('/authors/{id}',[AuthorController::class, 'show']); 
 
 Route::get('/posts', [PostController::class, 'index']);
-Route::get('/posts/{id}',[PostController::class, 'show']);
+Route::get('/posts/{id}',[PostController::class, 'show']) ->name('posts.show'); 
 
 Route::get('/home/{name}', function ($name) {
     return "This is $name's page";
