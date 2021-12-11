@@ -22,9 +22,16 @@
       @endforeach
 </ul>
 
-  </div> 
+  </div>
+  
 @endif
 
+@if (session('message'))
+<div>
+<p><b>{{session('message')}}</b></p>
+
+</div>
+@endif 
 <div>
 
 @yield('content')
