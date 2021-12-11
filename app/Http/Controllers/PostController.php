@@ -35,7 +35,15 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        dump($request);
+        $validatedData = $request->validate([
+            'title' => 'required|max:255',
+            'content' => 'required|max:255',
+            'date_of_posting' => 'nullable|date',
+            'author_name' => 'required|max:255',
+        ]);
+
+        return "Passed Validation";
+
     }
 
     /**
