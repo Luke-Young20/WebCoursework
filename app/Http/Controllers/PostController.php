@@ -118,7 +118,18 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-
+        $id = Auth::user()->id;print_r($id);
+        return view('posts.update');
+        $validatedData = $request->validate([
+            'title' => 'required|max:255',
+            'content' => 'required|max:255',
+            'date_of_posting' => 'nullable|date',        
+        ]
+    );
+             Post::find($id)->update([
+            'title' => request('title'),
+            'post_id' => 2,
+            'content' => request('content')]);
 
     }
 
@@ -165,10 +176,5 @@ class PostController extends Controller
 
             return redirect()->route('posts.index')->with('message','Post was not deleted, it is not your post.'); 
                }
-       
-        
-
-
-
     }
 }
