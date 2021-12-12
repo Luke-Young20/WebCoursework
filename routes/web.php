@@ -36,8 +36,13 @@ Route::get('/authors/{id}',[AuthorController::class, 'show']);
 Route::get('/posts', [PostController::class, 'index']) ->name('posts.index'); 
 Route::get('/posts/create', [PostController::class, 'create']) ->name('posts.create'); 
 Route::post('/posts', [PostController::class, 'store']) ->name('posts.store'); 
+#Route::get('/posts/{post}',[PostController::class, 'show']) ->name('posts.show'); 
 Route::get('/posts/{id}',[PostController::class, 'show']) ->name('posts.show'); 
 Route::delete('posts/{id}', [PostController::class, 'destroy']) ->name('posts.destroy'); 
+
+Route::get('/posts/{id}/secret', function() {
+    return "you are currently logged in";
+})->middleware(['auth']);
 
 #Will only show if the user is logged in
 Route::get('/secret', function() {
