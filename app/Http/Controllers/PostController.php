@@ -131,6 +131,9 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
+        
+        $id = Auth::user()->id;print_r($id);
+        return view('posts.update');
         $validatedData = $request->validate([
             'title' => 'required|max:255',
             'content' => 'required|max:255',
@@ -142,7 +145,7 @@ class PostController extends Controller
             'post_id' => 2,
             'content' => request('content')
     ]);
-    return view('posts.index', ['authors' => $authors]);
+    #return view('posts.index', ['authors' => $authors]);
     }
 
     /**

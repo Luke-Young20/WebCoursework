@@ -24,7 +24,7 @@
 <form method="UPDATE"
     action="{{route('posts.update', ['id' => $post->id]) }}">
     @csrf
-    @method('GET')
+    @method('PATCH')
     <button type="submit">Update</button>
     </form>
 
