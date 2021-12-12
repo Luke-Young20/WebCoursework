@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\PostController;
+use App\Services\Twitter;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +14,28 @@ use App\Http\Controllers\PostController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+app()->singleton(Twitter::class, function ($app){
+    return new Twitter('Secret Key');
+});
+
+Route::get('/exampleTwitter', [PostController::class, 'exampleTwitter']);
+
+
+app()->singleton(Facebook::class, function ($app){
+    return new Facebook('Secret Key124');
+});
+
+Route::get('/exampleFacebook', [PostController::class, 'exampleFacebook']);
+
+/*
+app()->singleton(Facebook::class, function ($app){
+    return new Facebook('Secret Key Facebook');
+});
+
+Route::get('/exampleFacebook', [PostController::class, 'exampleFacebook']);
+*/
+
 
 Route::get('/', function () {
     return view('welcome');

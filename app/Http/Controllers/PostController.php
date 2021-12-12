@@ -5,8 +5,27 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Author;
+use App\Services\Twitter;
+use App\Services\Facebook;
 class PostController extends Controller
 {
+
+    public function exampleTwitter(Post $foo, Twitter $t)
+    {
+
+        dd($t);
+        return "example";
+
+    }
+
+    public function exampleFacebook(Post $foo, Facebook $f)
+    {
+
+        dd($f);
+        return "example123";
+
+    }
+
     /**
      * Display a listing of the resource.
      *
