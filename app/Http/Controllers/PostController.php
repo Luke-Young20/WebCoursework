@@ -7,6 +7,8 @@ use App\Models\Post;
 use App\Models\Author;
 use App\Services\Twitter;
 use App\Services\Facebook;
+use Illuminate\Support\Facades\Auth;
+
 class PostController extends Controller
 {
 
@@ -44,6 +46,7 @@ class PostController extends Controller
      */
     public function create()
     {
+        $id = Auth::user()->id;print_r($id);
         $authors = Author::orderBy('name', 'asc')->get();
         return view('posts.create', ['authors' => $authors]);
 
@@ -69,7 +72,7 @@ class PostController extends Controller
             'title' => 'required|max:255',
             'content' => 'required|max:255',
             'date_of_posting' => 'nullable|date',
-            'author_id' => 'required|integer',
+            #'author_id' => 'required|integer',
         
         ]
     );
@@ -78,7 +81,7 @@ class PostController extends Controller
     $a->title = $validatedData['title'];
     $a->content = $validatedData['content'];
     $a->date_of_posting = $validatedData['date_of_posting'];
-    $a->author_id = $validatedData['author_id'];
+    $a->author_id = Auth::id(); 
     $a->save();
 
     session()->flash('message', 'Post successfully created.');
@@ -137,10 +140,19 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
+    {  
         $post = Post::findOrFail($id);
-        $post->delete();
-        return redirect()->route('posts.index')->with('message','Post was deleted.');
+
+            if($post->author_id == Auth::id()) {
+                $post->delete();
+                return redirect()->route('posts.index')->with('message','Post was deleted.'); 
+               } else {
+
+            return redirect()->route('posts.index')->with('message','Post was not deleted, it is not your post.'); 
+               }
+       
+        
+
 
 
     }
