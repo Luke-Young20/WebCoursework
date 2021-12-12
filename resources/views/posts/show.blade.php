@@ -21,5 +21,12 @@
     <button type="submit">Delete</button>
 </form>
 
+<form method="UPDATE"
+    action="{{route('posts.update', ['id' => $post->id]) }}">
+    @csrf
+    @method('GET')
+    <button type="submit">Update</button>
+    </form>
+
 <p><a href="{{route('posts.index')}}">Back</a></p>
 @endsection

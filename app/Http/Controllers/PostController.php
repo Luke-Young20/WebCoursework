@@ -118,7 +118,8 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+
+
     }
 
     /**
@@ -130,7 +131,18 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'title' => 'required|max:255',
+            'content' => 'required|max:255',
+            'date_of_posting' => 'nullable|date',        
+        ]
+    );
+             Post::find($id)->update([
+            'title' => request('title'),
+            'post_id' => 2,
+            'content' => request('content')
+    ]);
+    return view('posts.index', ['authors' => $authors]);
     }
 
     /**
