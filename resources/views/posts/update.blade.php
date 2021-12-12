@@ -5,7 +5,7 @@
 
 @section('content')
     
-    <form method="POST" action="{{route('posts.update', ['id' => $post->id]) }}">
+    <form method="GET" action="{{route('posts.update', ['id' => $post->id]) }}">
        @csrf
        @method('PATCH')
        <p> Title: <input type="text" name="title" value="{{old('title')}}"> </p> 

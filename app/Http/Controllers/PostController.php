@@ -66,9 +66,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-
-
-            
+   
             'title' => 'required|max:255',
             'content' => 'required|max:255',
             'date_of_posting' => 'nullable|date',
@@ -116,8 +114,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+/*     public function edit($id)
     {
+        $post -> Post::All();
         $id = Auth::user()->id;print_r($id);
         return view('posts.update');
         $validatedData = $request->validate([
@@ -130,8 +129,20 @@ class PostController extends Controller
             'title' => request('title'),
             'post_id' => 2,
             'content' => request('content')]);
+            
+
+
+
+    } */
+
+
+    public function edit($id)
+    {
+
+
 
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -142,10 +153,25 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $post = Post::findOrFail($id);
+        return view('posts.update', ['post' => $post]);
+        dd($id);
         
-        $id = Auth::user()->id;print_r($id);
-        return view('posts.update');
-        $validatedData = $request->validate([
+        $this->validate($request, [
+            'title' => 'required',
+            'content' => 'required'
+        ]);
+
+        $input = $request->all();
+
+        $post->fill($input)->save();
+    
+        Session::flash('flash_message', 'Task successfully added!');
+    
+        return redirect()->back();
+    }
+
+       /*  $validatedData = $request->validate([
             'title' => 'required|max:255',
             'content' => 'required|max:255',
             'date_of_posting' => 'nullable|date',        
@@ -155,9 +181,9 @@ class PostController extends Controller
             'title' => request('title'),
             'post_id' => 2,
             'content' => request('content')
-    ]);
-    #return view('posts.index', ['authors' => $authors]);
-    }
+    ]); */
+    #return view('posts.index', ['authors' => $authors]);}
+    
 
     /**
      * Remove the specified resource from storage.

@@ -28,5 +28,7 @@
     <button type="submit">Update</button>
     </form>
 
+
+
 <p><a href="{{route('posts.index')}}">Back</a></p>
 @endsection
