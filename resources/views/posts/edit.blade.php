@@ -6,9 +6,8 @@ IM ON THIS edit.blade PAGE
 
 @section('content')
     
-<form action="{{route('profile.update',['post' => $post->id])}}" enctype="multipart/form-data" method="post">
 
-
+<form action="/editpost/{{$post->id}}" method="post">
     {{  csrf_field() }}
        {{ method_field('PATCH')  }}
        <form method="POST" action="{{route('posts.update', ['id' => $post->id]) }}">

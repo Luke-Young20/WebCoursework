@@ -137,13 +137,14 @@ class PostController extends Controller
     } */
 
 
+     
     public function edit($id)
     {
 
         $post = Post::findOrFail($id);
         return view('posts.edit', ['post' => $post]);
          
-    }
+    } 
     /**
      * Update the specified resource in storage.
      *
@@ -166,7 +167,28 @@ class PostController extends Controller
     
         return redirect()->route('posts.index');
 
+    } 
+
+   /*  public function update($id){
+
+        //validate as usual
+        request()->validate([
+             'title' => 'required',
+             'content' => 'required'
+            ]);
+    
+        //Now instead of just creating a new one we are going to update the one we want
+        Post::find($id)->update([
+            'title' => request('title'),
+                'channel_id' => 2,
+                'content' => request('content')
+        ]);
+    
+        Session::flash('flash_message', 'post successfully updated!');     
+    
+        return back();
     }
+ */
 
        /*  $validatedData = $request->validate([
             'title' => 'required|max:255',
