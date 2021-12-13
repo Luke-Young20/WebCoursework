@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\PostController;
 use App\Services\Twitter;
+use App\Http\Controllers\CommentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -65,6 +66,10 @@ Route::patch('/editpost/{id}', [PostController::class, 'update']) ->name('posts.
 
 Route::get('/posts/create', [PostController::class, 'create']) ->name('posts.create')->middleware(['auth']);   
 Route::post('/posts', [PostController::class, 'store']) ->name('posts.store'); 
+
+Route::get('/comments/create', [CommentController::class, 'create']) ->name('comments.create');
+Route::post('/comments', [CommentController::class, 'store']) ->name('comments.store'); 
+
 #Route::get('/posts/{post}',[PostController::class, 'show']) ->name('posts.show'); 
 Route::get('/posts/{id}',[PostController::class, 'show']) ->name('posts.show'); 
 Route::delete('posts/{id}', [PostController::class, 'destroy']) ->name('posts.destroy')->middleware(['auth']);  

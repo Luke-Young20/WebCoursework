@@ -7,17 +7,17 @@ IM ON THIS edit.blade PAGE
 @section('content')
     
 
-<form action="/editpost/{{$post->id}}" method="post">
-    {{  csrf_field() }}
-       {{ method_field('PATCH')  }}
-       <form method="POST" action="{{route('posts.update', ['id' => $post->id]) }}">
+<form action="{{route(posts.update',['id' => $post_id])}}" method="POST">
+<form method="POST" action="{{route('posts.update', ['id' => $post->id]) }}">   
+{{  csrf_field() }}
+       {{ method_field('GET')  }}
        <p> Title: <input type="text" name="title" value="{{old('title')}}"> </p> 
        <p> Content: <input type="text" name="content" value="{{old('content')}}"> </p> 
        </form>
 
 
        <input type="submit" value="Submit">
-
+       
        <a href="{{route('posts.index')}}"> Cancel </a>
 
 </form>

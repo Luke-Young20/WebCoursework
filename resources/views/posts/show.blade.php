@@ -30,5 +30,8 @@
 
 
 
+
+    <a href="{{route('comments.create')}}">Create A Comment</a>
+
 <p><a href="{{route('posts.index')}}">Back</a></p>
 @endsection

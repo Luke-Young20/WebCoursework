@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Post;
+use App\Models\Author;
+use Illuminate\Support\Facades\Auth;
+
 
 class CommentController extends Controller
 {
@@ -23,7 +27,9 @@ class CommentController extends Controller
      */
     public function create()
     {
-        //
+        $id = Auth::user()->id;print_r($id);
+        $authors = Author::orderBy('name', 'asc')->get();
+        return view('comments.create', ['authors' => $authors]);
     }
 
     /**
@@ -34,7 +40,27 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+   
+            'title' => 'required|max:255',
+            'content' => 'required|max:255',
+            #'author_id' => auth()->id(),
+            #'post_id' => post()->id(),
+            #'date_of_posting' => 'nullable',
+            #'author_id' => 'required|integer',
+        
+        
+        ]);
+
+        $a = new Post;
+        $a->title = 'title';
+        $a->content = 'content';
+        $a->author_id = 5 ;
+        #$a->post_id = 57;
+        $a->save();
+    
+        session()->flash('message', 'Comment successfully created.');
+        return redirect()->route('posts.index');
     }
 
     /**
@@ -45,8 +71,12 @@ class CommentController extends Controller
      */
     public function show($id)
     {
-        //
+        dd($id);
+        $comment = Comment::findOrFail($id);
+        return view('posts.show', ['comment' => $comment]);
     }
+
+
 
     /**
      * Show the form for editing the specified resource.
