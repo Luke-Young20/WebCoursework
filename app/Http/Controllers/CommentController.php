@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Author;
+use App\Models\Comment;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -52,11 +53,11 @@ class CommentController extends Controller
         
         ]);
 
-        $a = new Post;
+        $a = new Comment;
         $a->title = 'title';
         $a->content = 'content';
-        $a->author_id = 5 ;
-        #$a->post_id = 57;
+        $a->author_id = Auth::id(); 
+        #$a->post_id = Post::id();
         $a->save();
     
         session()->flash('message', 'Comment successfully created.');

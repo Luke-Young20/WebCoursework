@@ -10,11 +10,16 @@
        <p> Content: <input type="text" name="content" value="{{old('content')}}"> </p> 
        <!-- <p> Date Of Posting: <input type="text" name="date_of_posting" value="{{old('date_of_posting')}}"> </p>  -->
       
-       <div class="chooseFile-form">
-          <label>You may add an image</label>
-          <div class="custom-file">
-            <input type="file" class="custom-file-input" id="customFile">
-            <label class="custom-file-label" for="customFile">Choose image</label>
+
+
+
+
+       <div class="flex justify-center">
+         <form action="/posts" method="POST" enctype="multipart/form-data">
+          @csrf
+          <div class="block">
+            <input type="file" class="block shadow-5xl mb-10 p-2 w-80 italic placeholder-gray-400" 
+            name = "image">
           </div>
         </div>
 
