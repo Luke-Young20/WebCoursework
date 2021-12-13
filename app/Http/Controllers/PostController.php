@@ -9,6 +9,7 @@ use App\Services\Twitter;
 use App\Services\Facebook;
 use Illuminate\Support\Facades\Auth;
 
+
 class PostController extends Controller
 {
 
@@ -20,7 +21,7 @@ class PostController extends Controller
 
     }
 
-    public function exampleFacebook(Post $foo, Facebook $f)
+    public function Facebook(Post $foo, Facebook $f)
     {
 
         dd($f);
@@ -69,7 +70,7 @@ class PostController extends Controller
    
             'title' => 'required|max:255',
             'content' => 'required|max:255',
-            'date_of_posting' => 'nullable|date',
+            #'date_of_posting' => 'nullable',
             #'author_id' => 'required|integer',
         
         ]
@@ -78,7 +79,7 @@ class PostController extends Controller
     $a = new Post;
     $a->title = $validatedData['title'];
     $a->content = $validatedData['content'];
-    $a->date_of_posting = $validatedData['date_of_posting'];
+    #$a->date_of_posting = ['created_at'];
     $a->author_id = Auth::id(); 
     $a->save();
 
@@ -138,8 +139,20 @@ class PostController extends Controller
 
     public function edit($id)
     {
+        dd($id);
 
+         $this->validate($request, [
+            'title' => 'required',
+            'content' => 'required'
+        ]);
 
+        $input = $request->all();
+
+        $post->fill($input)->save();
+    
+        Session::flash('flash_message', 'post successfully updated!');
+    
+        return redirect()->route('posts.index');
 
     }
 
@@ -155,20 +168,8 @@ class PostController extends Controller
     {
         $post = Post::findOrFail($id);
         return view('posts.update', ['post' => $post]);
-        dd($id);
         
-        $this->validate($request, [
-            'title' => 'required',
-            'content' => 'required'
-        ]);
-
-        $input = $request->all();
-
-        $post->fill($input)->save();
-    
-        Session::flash('flash_message', 'Task successfully added!');
-    
-        return redirect()->back();
+       
     }
 
        /*  $validatedData = $request->validate([

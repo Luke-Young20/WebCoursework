@@ -11,7 +11,7 @@ class Facebook
         $this->apiKey = $apiKey;
     }
 
-    public function facebook($text)
+    public function tweet($text)
     {
         $newString = $text.$this->apiKey;
         dd($newString);

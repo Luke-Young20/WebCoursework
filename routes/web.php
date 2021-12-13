@@ -21,12 +21,12 @@ app()->singleton(Twitter::class, function ($app){
 
 Route::get('/exampleTwitter', [PostController::class, 'exampleTwitter']);
 
-
 app()->singleton(Facebook::class, function ($app){
-    return new Facebook('Secret Key124');
+    return new Facebook('Secret Key');
 });
 
-Route::get('/exampleFacebook', [PostController::class, 'exampleFacebook']);
+Route::get('/Facebook', [PostController::class, 'Facebook']);
+
 
 /*
 app()->singleton(Facebook::class, function ($app){
@@ -59,7 +59,7 @@ Route::get('/authors/{id}',[AuthorController::class, 'show']);
 Route::get('/posts', [PostController::class, 'index']) ->name('posts.index');
 
 Route::get('/updatepost/{id}', [PostController::class, 'update']) ->name('posts.update');
-#Route::patch('/updatepost/{id}', [PostController::class, 'update']) ->name('posts.update');
+Route::put('/updatepost/{id}', [PostController::class, 'edit']) ->name('posts.edit');
 
 Route::get('/posts/create', [PostController::class, 'create']) ->name('posts.create')->middleware(['auth']);   
 Route::post('/posts', [PostController::class, 'store']) ->name('posts.store'); 
