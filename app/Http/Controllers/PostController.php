@@ -168,8 +168,6 @@ class PostController extends Controller
     {
         $post = Post::findOrFail($id);
         return view('posts.update', ['post' => $post]);
-        
-       
     }
 
        /*  $validatedData = $request->validate([

@@ -9,7 +9,7 @@
        @csrf
        <p> Title: <input type="text" name="title" value="{{old('title')}}"> </p> 
        <p> Content: <input type="text" name="content" value="{{old('content')}}"> </p> 
-       <p> Date Of Posting: <input type="text" name="date_of_posting" value="{{old('date_of_posting')}}"> </p> 
+       <!-- <p> Date Of Posting: <input type="text" name="date_of_posting" value="{{old('date_of_posting')}}"> </p>  -->
       
        <div class="chooseFile-form">
           <label>You may add an image</label>
