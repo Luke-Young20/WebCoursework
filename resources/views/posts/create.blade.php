@@ -1,5 +1,4 @@
 @extends('layouts.authorlayout')
-
 @section('title', 'Create a Post')
     
 

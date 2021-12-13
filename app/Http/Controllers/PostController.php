@@ -139,9 +139,21 @@ class PostController extends Controller
 
     public function edit($id)
     {
-        dd($id);
 
-         $this->validate($request, [
+        $post = Post::findOrFail($id);
+        return view('posts.edit', ['post' => $post]);
+         
+    }
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $this->validate($request, [
             'title' => 'required',
             'content' => 'required'
         ]);
@@ -154,20 +166,6 @@ class PostController extends Controller
     
         return redirect()->route('posts.index');
 
-    }
-
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        $post = Post::findOrFail($id);
-        return view('posts.update', ['post' => $post]);
     }
 
        /*  $validatedData = $request->validate([

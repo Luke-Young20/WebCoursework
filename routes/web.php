@@ -58,8 +58,10 @@ Route::get('/authors', [AuthorController::class, 'index']);
 Route::get('/authors/{id}',[AuthorController::class, 'show']); 
 Route::get('/posts', [PostController::class, 'index']) ->name('posts.index');
 
-Route::get('/updatepost/{id}', [PostController::class, 'update']) ->name('posts.update');
-Route::put('/updatepost/{id}', [PostController::class, 'edit']) ->name('posts.edit');
+#Route::get('/updatepost/{id}', [PostController::class, 'edit']) ->name('posts.edit');
+Route::patch('/editpost/{id}', [PostController::class, 'update']) ->name('posts.update');
+Route::get('/editpost/{id}', [PostController::class, 'update']) ->name('posts.update');
+Route::post('/editpost/{id}', [PostController::class, 'update']) ->name('posts.update');
 
 Route::get('/posts/create', [PostController::class, 'create']) ->name('posts.create')->middleware(['auth']);   
 Route::post('/posts', [PostController::class, 'store']) ->name('posts.store'); 

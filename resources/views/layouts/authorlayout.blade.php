@@ -12,7 +12,7 @@
 
 <body>
   <!-- your content here... -->
-  <h1>Authors - @yield('title')</h1>
+  <h1>@yield('title')</h1>
   
  @if ($errors->any()) 
   <div>
