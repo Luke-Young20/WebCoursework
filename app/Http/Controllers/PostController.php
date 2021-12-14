@@ -52,10 +52,6 @@ class PostController extends Controller
         return view('posts.create', ['authors' => $authors]);
 
  
-
-
- 
-
     }
 
     /**
@@ -66,32 +62,25 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+
         $validatedData = $request->validate([
    
             'title' => 'required|max:255',
             'content' => 'required|max:255',
-            #'date_of_posting' => 'nullable',
-            #'author_id' => 'required|integer',
-        
+
+    
         ]
     );
 
     $a = new Post;
     $a->title = $validatedData['title'];
     $a->content = $validatedData['content'];
-    #$a->date_of_posting = ['created_at'];
     $a->author_id = Auth::id(); 
     $a->save();
 
     session()->flash('message', 'Post successfully created.');
     return redirect()->route('posts.index');
-  
- /**
-  * This was just for testing: remove later
-  * return "Passed Validation"; 
-  **/
 
-       
 
 
 
