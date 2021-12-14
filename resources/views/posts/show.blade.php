@@ -20,20 +20,11 @@
     @method('DELETE')
     <button type="submit">Delete</button>
 </form>
-<!-- 
-<form method="POST"
-    action="{{route('posts.update', ['id' => $post->id]) }}">
-    @csrf
-    @method('PATCH')
-    <button type="submit" formmethod="post" formaction="posts.update.php">UPDATE12</button>
-    </form> -->
-
-
 
 
     <a href="{{route('posts.edit', ['id' => $post->id])}}">Update</a>
 
-<p><a href="{{route('posts.index')}}">Back</a></p>
+    <p><a href="{{route('posts.index')}}">Back</a></p>
 
 
 <br>
