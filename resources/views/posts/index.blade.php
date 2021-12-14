@@ -14,6 +14,9 @@
      @endforeach
     </ul>
 
+    {{$posts->links()}}
+    
+
     <a href="{{route('posts.create')}}">Create A Post</a>
 
     
