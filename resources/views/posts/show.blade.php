@@ -34,7 +34,22 @@
     <button id="postCommentBtn">Post Comment</button>
 </div>
 @foreach($comments as $comment)
-    <p>{{$comment->commentText}}</p>
+
+
+<table>
+    <tr>
+        <th>Comment</th>
+        <th>Date</th>
+        <th>Author</th>
+    </tr>
+    <tr>
+        <td>{{$comment->commentText}}</td>
+        <td>{{$comment->created_at}}</td>
+        <td>{{$comment->author->name}}</td>
+    </tr>
+    
+</table?>
+
 @endforeach
 <script>
     
