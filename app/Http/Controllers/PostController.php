@@ -127,9 +127,17 @@ class PostController extends Controller
     {
 
         $post = Post::findOrFail($id);
-        return view('posts.edit', ['post' => $post]);
-         
+
+
+            if($post->author_id == Auth::id()) {
+               //remove all by this line and the findorfail to remove the auth
+                return view('posts.edit', ['post' => $post]);} 
+            else {
+                return redirect()->route('posts.index')->with('message','Post cannot be updated, it is not your post.'); 
+               }
     } 
+
+
     /**
      * Update the specified resource in storage.
      *
