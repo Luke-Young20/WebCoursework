@@ -20,18 +20,42 @@
     @method('DELETE')
     <button type="submit">Delete</button>
 </form>
-
-<form method="UPDATE"
+<!-- 
+<form method="POST"
     action="{{route('posts.update', ['id' => $post->id]) }}">
     @csrf
     @method('PATCH')
-    <button type="submit">Update</button>
-    </form>
+    <button type="submit" formmethod="post" formaction="posts.update.php">UPDATE12</button>
+    </form> -->
 
 
 
 
-    <a href="{{route('comments.create')}}">Create A Comment</a>
+    <a href="{{route('posts.edit', ['id' => $post->id])}}">Update</a>
+    <!-- <a href="{{route('comments.create')}}">Create A Comment</a> -->
 
 <p><a href="{{route('posts.index')}}">Back</a></p>
+<br>
+<div>
+    <!-- <input type="text" name="title" id="commentTitle"> -->
+    <input type="text" name="comment" id="commentText">
+    <button id="postCommentBtn">Post Comment</button>
+</div>
+<script>
+    // var commentTitleElem = document.getElementById('commentTitle');
+    var commentTextElem = document.getElementById('commentText');
+    document.getElementById('postCommentBtn').addEventListener('click', function() {
+        // var title = commentTitleElem.value;
+        var text = commentTextElem.value;
+        var data = new URLSearchParams();
+        data.append('content', text);
+        axios.post("{{route('comments.store', ['id' => $post->id]) }}", data)
+            .then(function() {
+                console.log(arguments);
+            })
+            .catch(function(err) {
+                console.error(err);
+            });
+    });
+</script>
 @endsection

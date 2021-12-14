@@ -44,7 +44,6 @@ class CommentController extends Controller
         $validatedData = $request->validate([
    
             'title' => 'required|max:255',
-            'content' => 'required|max:255',
             #'author_id' => auth()->id(),
             #'post_id' => post()->id(),
             #'date_of_posting' => 'nullable',
@@ -54,7 +53,6 @@ class CommentController extends Controller
         ]);
 
         $a = new Comment;
-        $a->title = 'title';
         $a->content = 'content';
         $a->author_id = Auth::id(); 
         #$a->post_id = Post::id();

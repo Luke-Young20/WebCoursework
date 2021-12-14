@@ -13,11 +13,10 @@ IM ON THIS edit.blade PAGE
 @method('PATCH')
        <p> Title: <input type="text" name="title" value="{{old('title')}}"> </p> 
        <p> Content: <input type="text" name="content" value="{{old('content')}}"> </p> 
-       </form>
 
+       <!-- <button type="submit" formmethod="post" formaction="{{route('posts.update', ['id' => $post->id]) }}">Submit</button> -->
+       <button type="submit">Submit</button>
 
-       <input type="submit" value="Submit">
-       
        <a href="{{route('posts.index')}}"> Cancel </a>
 
 </form>

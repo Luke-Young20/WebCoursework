@@ -64,26 +64,19 @@ class PostController extends Controller
     {
 
         $validatedData = $request->validate([
-   
             'title' => 'required|max:255',
             'content' => 'required|max:255',
+            ]
+        );
 
-    
-        ]
-    );
+        $a = new Post;
+        $a->title = $validatedData['title'];
+        $a->content = $validatedData['content'];
+        $a->author_id = Auth::id(); 
+        $a->save();
 
-    $a = new Post;
-    $a->title = $validatedData['title'];
-    $a->content = $validatedData['content'];
-    $a->author_id = Auth::id(); 
-    $a->save();
-
-    session()->flash('message', 'Post successfully created.');
-    return redirect()->route('posts.index');
-
-
-
-
+        session()->flash('message', 'Post successfully created.');
+        return redirect()->route('posts.index');
     }
 
     /**
@@ -143,16 +136,20 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
+        $validatedData = $this->validate($request, [
             'title' => 'required',
             'content' => 'required'
         ]);
 
         $input = $request->all();
 
-        $post->fill($input)->save();
+        $post = Post::findOrFail($id);
+        #$post->fill($input)->save();
+        $post->title = $validatedData['title'];
+        $post->content = $validatedData['content'];
+        $post->save();
     
-        Session::flash('flash_message', 'post successfully updated!');
+        session()->flash('message', 'post successfully updated!');
     
         return redirect()->route('posts.index');
 
@@ -173,7 +170,7 @@ class PostController extends Controller
                 'content' => request('content')
         ]);
     
-        Session::flash('flash_message', 'post successfully updated!');     
+        session()->flash('message', 'post successfully updated!');     
     
         return back();
     }
