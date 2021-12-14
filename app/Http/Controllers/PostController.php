@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Author;
+use App\Models\Comment;
 use App\Services\Twitter;
 use App\Services\Facebook;
 use Illuminate\Support\Facades\Auth;
@@ -88,7 +89,9 @@ class PostController extends Controller
     public function show($id)
     {
         $post = Post::findOrFail($id);
-        return view('posts.show', ['post' => $post]);
+        //figure out how to load comments for this post
+        $comments = Comment::where('post_id', $id)->get();
+        return view('posts.show', ['post' => $post, 'comments' => $comments]);
     }
 
     /**

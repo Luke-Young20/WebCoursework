@@ -39,27 +39,21 @@ class CommentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $postId)
     {
         $validatedData = $request->validate([
    
-            'title' => 'required|max:255',
-            #'author_id' => auth()->id(),
-            #'post_id' => post()->id(),
-            #'date_of_posting' => 'nullable',
-            #'author_id' => 'required|integer',
-        
-        
+            'content' => 'required|max:255',        
         ]);
 
         $a = new Comment;
-        $a->content = 'content';
+        $a->commentText = $validatedData['content'];
         $a->author_id = Auth::id(); 
-        #$a->post_id = Post::id();
+        $a->post_id = $postId;
         $a->save();
     
-        session()->flash('message', 'Comment successfully created.');
-        return redirect()->route('posts.index');
+        // session()->flash('message', 'Comment successfully created.');
+        // return redirect()->route('posts.index');
     }
 
     /**
