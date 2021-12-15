@@ -16,6 +16,7 @@ class AuthorFactory extends Factory
         return [
             'name' => $this->faker->firstName(),
             'last_name' => $this->faker->lastName(),
+            'type' => $this->faker->randomElement(['normal', 'admin']),
         ];
     }
 }

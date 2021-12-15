@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Author;
+use App\Models\User;
 use App\Models\Comment;
 use App\Services\Twitter;
 use App\Services\Facebook;
@@ -223,7 +224,7 @@ class PostController extends Controller
     {  
         $post = Post::findOrFail($id);
 
-            if($post->author_id == Auth::id()) {
+            if($post->author_id == Auth::id() || $author->type() == admin) {
                 $post->delete();
                 return redirect()->route('posts.index')->with('message','Post was deleted.'); 
                } else {

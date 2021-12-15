@@ -58,6 +58,11 @@ body {
  background-image: url("paper.gif");
  background-color: #aaaa;
 }
+li {
+    list-style: none;
+    font-size: 30px;
+}
+
 
 
       </style>
