@@ -9,7 +9,8 @@
 
    <img
     src="{{asset ('images/' . $post->image_path)}}"
-    class="w-10/12 mb-8 shadow-xl"
+    width="500" 
+    height="auto"
     alt="">
 
     <ul>
