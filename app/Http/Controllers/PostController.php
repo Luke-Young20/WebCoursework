@@ -70,10 +70,17 @@ class PostController extends Controller
             ]
         );
 
+        $newImageName = time() . '-' . $request->title . '.' .
+        $request->image->extension();
+        
+        $request->image->move(public_path('images'), $newImageName);
+
+
         $a = new Post;
         $a->title = $validatedData['title'];
         $a->content = $validatedData['content'];
-        $a->author_id = Auth::id(); 
+        $a->author_id = Auth::id();
+        $a->image_path = $newImageName;
         $a->save();
 
         session()->flash('message', 'Post successfully created.');

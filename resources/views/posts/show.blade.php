@@ -6,7 +6,12 @@
 
 @section('content')
         
-   
+
+   <img
+    src="{{asset ('images/' . $post->image_path)}}"
+    class="w-10/12 mb-8 shadow-xl"
+    alt="">
+
     <ul>
         <li>Post Title: {{$post->title}}</li>
         <li>Content: {{$post->content}}</li>
@@ -14,12 +19,14 @@
         <li>Date of posting: {{$post->created_at}}</li>
     </ul>
 
+
     <form method="POST"
     action="{{route('posts.destroy', ['id' => $post->id]) }}">
     @csrf
     @method('DELETE')
     <button type="submit">Delete</button>
 </form>
+
 
 
     <a href="{{route('posts.edit', ['id' => $post->id])}}">Update</a>
