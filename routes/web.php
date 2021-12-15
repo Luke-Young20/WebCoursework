@@ -45,9 +45,14 @@ Route::get('/postauthor/{author?}', function ($author = null) {
     return view ('author', ['author'=>$author]);
 });
 
-Route::get('/dashboard', function () {
+
+Route::get('/olddashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+Route::get('/dashboard', function () {
+    return redirect('/posts');
+});
 
 
 Route::get('/home', function () {

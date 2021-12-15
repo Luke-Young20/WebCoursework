@@ -43,8 +43,13 @@
 </div>
 @foreach($comments as $comment)
 
+@endforeach
+@foreach($comments as $comment)
+
 
 <table>
+<button type="submit">Delete</button>
+<button type="submit">Update</button>
     <tr>
         <th>Comment</th>
         <th>Date</th>
