@@ -102,6 +102,15 @@ class CommentController extends Controller
      */
     public function destroy($id)
     {
-        //
-    }
+/*         $comment = Comment::findOrFail($id);
+
+        if($comment_id->author_id == Auth::id()) {
+            $comment->delete();
+            return redirect()->route('posts.index')->with('message','comment was deleted.'); 
+           } else {
+
+        return redirect()->route('posts.index')->with('message','comment was not deleted, it is not your comment.'); 
+           } */
+}
+    
 }

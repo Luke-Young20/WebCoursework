@@ -48,8 +48,9 @@
 
 
 <table>
-<button type="submit">Delete</button>
+
 <button type="submit">Update</button>
+<button type="submit">Delete</button>
     <tr>
         <th>Comment</th>
         <th>Date</th>

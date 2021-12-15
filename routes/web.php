@@ -77,6 +77,7 @@ Route::post('/posts/{id}/comments', [CommentController::class, 'store']) ->name(
 #Route::get('/posts/{post}',[PostController::class, 'show']) ->name('posts.show'); 
 Route::get('/posts/{id}',[PostController::class, 'show']) ->name('posts.show'); 
 Route::delete('posts/{id}', [PostController::class, 'destroy']) ->name('posts.destroy')->middleware(['auth']);  
+#Route::delete('posts/{id}', [CommentController::class, 'destroy']) ->name('comments.destroy');
 
 Route::get('/posts/{id}/secret', function() {
     return "you are currently logged in";

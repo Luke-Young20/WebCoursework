@@ -157,12 +157,17 @@ class PostController extends Controller
         $validatedData = $this->validate($request, [
             'title' => 'required',
             'content' => 'required'
+
         ]);
 
         $input = $request->all();
 
         $post = Post::findOrFail($id);
-        #$post->fill($input)->save();
+        $newImageName = time() . '-' . $request->title;
+        
+
+
+        $post->image_path = $newImageName;
         $post->title = $validatedData['title'];
         $post->content = $validatedData['content'];
         $post->save();
