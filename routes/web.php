@@ -22,7 +22,7 @@ app()->singleton(Twitter::class, function ($app){
 
 Route::get('/exampleTwitter', [PostController::class, 'exampleTwitter']);
 
-app()->singleton(Facebook::class, function ($app){
+/* app()->singleton(Facebook::class, function ($app){
     return new Facebook('Secret Key');
 });
 
@@ -35,7 +35,7 @@ app()->singleton(Facebook::class, function ($app){
 
 Route::get('/exampleFacebook', [PostController::class, 'exampleFacebook']);
 
-
+ */
 
 Route::get('/', function () {
     return view('welcome');
