@@ -16,7 +16,7 @@
     <ul>
         <li>Post Title: {{$post->title}}</li>
         <li>Content: {{$post->content}}</li>
-        <li>Author ID: {{$post->author->name}}</li>
+        <li>Author ID: {{$post->author->name}} {{$post->author->last_name}}</li>
         <li>Date of posting: {{$post->created_at}}</li>
     </ul>
 
@@ -59,7 +59,7 @@
     <tr>
         <td>{{$comment->commentText}}</td>
         <td>{{$comment->created_at}}</td>
-        <td>{{$comment->author->name}}</td>
+        <td>{{$comment->author->name}}  {{$comment->author->last_name}}</td>
     </tr>
     
 </table?>
