@@ -224,7 +224,7 @@ class PostController extends Controller
     {  
         $post = Post::findOrFail($id);
 
-            if($post->author_id == Auth::id() || $author->type() == admin) {
+            if($post->author_id == Auth::id()) { #|| $author->type() == admin
                 $post->delete();
                 return redirect()->route('posts.index')->with('message','Post was deleted.'); 
                } else {
