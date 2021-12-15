@@ -57,9 +57,9 @@
         <th>Author</th>
     </tr>
     <tr>
-        <td>{{$comment->commentText}}</td>
-        <td>{{$comment->created_at}}</td>
-        <td>{{$comment->author->name}}  {{$comment->author->last_name}}</td>
+        <td>Comment: {{$comment->commentText}}</td>
+        <td>Date: {{$comment->created_at}}</td>
+        <td>Author: {{$comment->author->name}}  {{$comment->author->last_name}}</td>
     </tr>
     
 </table?>
