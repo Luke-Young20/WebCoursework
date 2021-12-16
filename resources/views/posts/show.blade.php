@@ -37,7 +37,7 @@
     <button type="submit">Delete</button>
 </form>
 
-
+<form><button type="submit">POST TO FACEBOOK</button></form>
 
     <a href="{{route('posts.edit', ['id' => $post->id])}}">Update</a>
 
