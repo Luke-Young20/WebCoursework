@@ -13,6 +13,7 @@
     height="auto"
     alt="">
 
+
     <ul>
         <li>Post Title: {{$post->title}}</li>
         <li>Content: {{$post->content}}</li>

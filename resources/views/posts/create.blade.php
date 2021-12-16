@@ -1,4 +1,9 @@
 Im on create blade.php
+body {
+
+text-align: center;
+
+}
 @extends('layouts.authorlayout')
 @section('title', 'Create a Post')
     

@@ -130,7 +130,7 @@ class PostController extends Controller
         $post = Post::findOrFail($id);
 
 
-            if($post->author_id == Auth::id()) {
+            if($post->author_id == Auth::id()OR Auth::user()->type == 'admin') {
                //remove all by this line and the findorfail to remove the auth
                 return view('posts.edit', ['post' => $post]);} 
             else {
