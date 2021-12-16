@@ -17,7 +17,4 @@ class Facebook
         $newString = $text.$this->apiKey;
         dd($newString);
     }
-
-
-
 }

@@ -21,7 +21,6 @@ class Author extends Model
         return $this->hasMany('App\Models\Comment');
     }
 
-    #one to one with user.
     public function user()
     {
         return $this->belongsTo('App\Models\User');

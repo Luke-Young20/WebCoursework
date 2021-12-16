@@ -18,8 +18,6 @@ class PostFactory extends Factory
             'title' => $this->faker->word(),
             'content' => $this->faker->sentence,
             'author_id' => $this->faker->numberBetween($min = 1, $max = Author::all()->count()),
-            //make this a variable
-            //'author_id' => $this->faker->numberBetween($min = 1, $max = 15),
         ];
     }
 }

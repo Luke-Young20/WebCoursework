@@ -17,9 +17,7 @@ class PostController extends Controller
 
     public function exampleFacebook(Post $fb, Facebook $fbpost){
 
-        $fbpost->postfb("i'm posting from exampleFacebook! ");
-
-  
+        $fbpost->postfb("I'm posting from exampleFacebook! ");
     }
 
     /**
@@ -43,8 +41,6 @@ class PostController extends Controller
         $id = Auth::user()->id;print_r($id);
         $authors = Author::orderBy('name', 'asc')->get();
         return view('posts.create', ['authors' => $authors]);
-
- 
     }
 
     /**
@@ -67,7 +63,7 @@ class PostController extends Controller
         
         $request->image->move(public_path('images'), $newImageName);
 
-
+        //creating a new post here
         $a = new Post;
         $a->title = $validatedData['title'];
         $a->content = $validatedData['content'];
@@ -88,7 +84,6 @@ class PostController extends Controller
     public function show($id)
     {
         $post = Post::findOrFail($id);
-        //figure out how to load comments for this post
         $comments = Comment::where('post_id', $id)->get();
         $tags = Post::find($id)->tags;
         return view('posts.show', ['post' => $post, 'comments' => $comments, 'tags' => $tags]);
@@ -100,30 +95,7 @@ class PostController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
-     */
-/*     public function edit($id)
-    {
-        $post -> Post::All();
-        $id = Auth::user()->id;print_r($id);
-        return view('posts.update');
-        $validatedData = $request->validate([
-            'title' => 'required|max:255',
-            'content' => 'required|max:255',
-            'date_of_posting' => 'nullable|date',        
-        ]
-    );
-             Post::find($id)->update([
-            'title' => request('title'),
-            'post_id' => 2,
-            'content' => request('content')]);
-            
-
-
-
-    } */
-
-
-     
+     */  
     public function edit($id)
     {
 
@@ -131,7 +103,7 @@ class PostController extends Controller
 
 
             if($post->author_id == Auth::id()OR Auth::user()->type == 'admin') {
-               //remove all by this line and the findorfail to remove the auth
+               //remove all but this line and the findorfail to remove the auth
                 return view('posts.edit', ['post' => $post]);} 
             else {
                 return redirect()->route('posts.index')->with('message','Post cannot be updated, it is not your post.'); 
@@ -171,41 +143,6 @@ class PostController extends Controller
         return redirect()->route('posts.index');
 
     } 
-
-   /*  public function update($id){
-
-        //validate as usual
-        request()->validate([
-             'title' => 'required',
-             'content' => 'required'
-            ]);
-    
-        //Now instead of just creating a new one we are going to update the one we want
-        Post::find($id)->update([
-            'title' => request('title'),
-                'channel_id' => 2,
-                'content' => request('content')
-        ]);
-    
-        session()->flash('message', 'post successfully updated!');     
-    
-        return back();
-    }
- */
-
-       /*  $validatedData = $request->validate([
-            'title' => 'required|max:255',
-            'content' => 'required|max:255',
-            'date_of_posting' => 'nullable|date',        
-        ]
-    );
-             Post::find($id)->update([
-            'title' => request('title'),
-            'post_id' => 2,
-            'content' => request('content')
-    ]); */
-    #return view('posts.index', ['authors' => $authors]);}
-    
 
     /**
      * Remove the specified resource from storage.

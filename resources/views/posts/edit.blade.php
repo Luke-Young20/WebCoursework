@@ -13,7 +13,6 @@
 <div id='title-input'> <p> Title: <input type="text" name="title" value="{{old('title')}}"> </p> </div>
 <div id='content-input'> <p> Content: <input type="text" name="content" value="{{old('content')}}"> </p> </div>
 
-       <!-- <button type="submit" formmethod="post" formaction="{{route('posts.update', ['id' => $post->id]) }}">Submit</button> -->
        <div id='submit-button'><button type="submit">Submit</button></div>
 
        <div id='cancel-button'> <a href="{{route('posts.index')}}"> Cancel </a> </div>
