@@ -35,10 +35,10 @@
     action="{{route('posts.destroy', ['id' => $post->id]) }}">
     @csrf
     @method('DELETE')
-    <button type="submit">Delete</button>
+    <div id='delete-button'><button type="submit">Delete</button></div>
 </form>
 
-<form><button type="submit">POST TO FACEBOOK</button></form>
+<div id='facebook-button'><button type="submit">POST TO FACEBOOK</button></div>
 
     <a href="{{route('posts.edit', ['id' => $post->id])}}">Update</a>
 
@@ -46,21 +46,18 @@
 
 
 <br>
-<div>
-    <!-- <input type="text" name="title" id="commentTitle"> -->
-    <input type="text" name="comment" id="commentText">
-    <button id="postCommentBtn">Post Comment</button>
-</div>
+
+<div id='comment-box'><input type="text" name="comment" id="commentText"></div>
+    <div id='comment-button'><button id="postCommentBtn">Post Comment</button></div>
+
 @foreach($comments as $comment)
 
 @endforeach
 @foreach($comments as $comment)
 
 
-<table>
+<div id = "comments"><table>
 
-<button type="submit">Update</button>
-<button type="submit">Delete</button>
     <tr>
         <th>Comment</th>
         <th>Date</th>
@@ -73,6 +70,7 @@
     </tr>
     
 </table?>
+</div>
 
 @endforeach
 <script>
@@ -96,4 +94,43 @@
             });
     });
 </script>
+
+<style>
+body {
+    text-align: center;
+    margin: 50;
+    
+}
+#title{
+       padding: 20px;
+}
+#title-button{
+       padding: 5px;
+}
+#comment-box{ 
+     align-content:left;
+}
+#comment-button{
+    align-content:left;   
+}
+#comments{
+    align-content:left;
+
+}
+td{
+    border-left: black;
+    border-right: black;
+    border-style: solid;
+    padding: 4px;
+}
+th{
+    border-left: black;
+    border-right: black;
+    border-style: solid;
+}
+a{
+    font-size: 25px;
+}
+</style>
+
 @endsection

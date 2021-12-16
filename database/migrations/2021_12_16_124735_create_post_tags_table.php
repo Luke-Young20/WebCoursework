@@ -21,10 +21,10 @@ class CreatePostTagsTable extends Migration
 
 
             $table->foreign('post_id')->references('id')->on('posts')
-            ->onDelete('cascade')->ouUpdate('cascade'); // sql connecting many to many
+            ->onDelete('cascade')->ouUpdate('cascade'); 
 
             $table->foreign('tag_id')->references('id')->on('tags')
-            ->onDelete('cascade')->ouUpdate('cascade'); // sql connecting many to many
+            ->onDelete('cascade')->ouUpdate('cascade'); 
         });
     }
 
