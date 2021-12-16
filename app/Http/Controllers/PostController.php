@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Author;
+use App\Models\Tag;
 use App\Models\User;
 use App\Models\Comment;
 use App\Services\Twitter;
@@ -99,7 +100,10 @@ class PostController extends Controller
         $post = Post::findOrFail($id);
         //figure out how to load comments for this post
         $comments = Comment::where('post_id', $id)->get();
-        return view('posts.show', ['post' => $post, 'comments' => $comments]);
+        $tags = Post::find($id)->tags;
+        dump($tags);
+        return view('posts.show', ['post' => $post, 'comments' => $comments, 'tags' => $tags]);
+
     }
 
     /**

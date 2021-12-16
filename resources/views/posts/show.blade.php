@@ -18,6 +18,15 @@
         <li>Content: {{$post->content}}</li>
         <li>Author ID: {{$post->author->name}} {{$post->author->last_name}}</li>
         <li>Date of posting: {{$post->created_at}}</li>
+          
+        <li>List of Assigned Tags: 
+
+                    @foreach ($tags as $tag) 
+                    <li>Tags: {{App\Models\Tag::findorfail($tag->id)->tag_name}}</li>
+                    @endforeach
+                   
+            
+            </li>
     </ul>
 
 
