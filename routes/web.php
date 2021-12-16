@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\PostController;
-use App\Services\Twitter;
+use App\Services\Facebook;
 use App\Http\Controllers\CommentController;
 /*
 |--------------------------------------------------------------------------
@@ -16,26 +16,8 @@ use App\Http\Controllers\CommentController;
 |
 */
 
-app()->singleton(Twitter::class, function ($app){
-    return new Twitter('Secret Key');
-});
 
-Route::get('/exampleTwitter', [PostController::class, 'exampleTwitter']);
-
-/* app()->singleton(Facebook::class, function ($app){
-    return new Facebook('Secret Key');
-});
-
-Route::get('/Facebook', [PostController::class, 'Facebook']);
-
-
-app()->singleton(Facebook::class, function ($app){
-    return new Facebook('Secret Key Facebook');
-});
-
-Route::get('/exampleFacebook', [PostController::class, 'exampleFacebook']);
-
- */
+Route::get('/Facebook', [PostController::class, 'exampleFacebook']);
 
 Route::get('/', function () {
     return view('welcome');

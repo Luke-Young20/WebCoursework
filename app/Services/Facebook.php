@@ -4,6 +4,7 @@ namespace App\Services;
 
 class Facebook
 {
+
     private $apiKey;
 
     public function __construct($apiKey)
@@ -11,7 +12,7 @@ class Facebook
         $this->apiKey = $apiKey;
     }
 
-    public function facebook($text)
+    public function postfb($text)
     {
         $newString = $text.$this->apiKey;
         dd($newString);

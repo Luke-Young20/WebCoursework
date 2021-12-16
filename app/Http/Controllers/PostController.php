@@ -8,7 +8,6 @@ use App\Models\Author;
 use App\Models\Tag;
 use App\Models\User;
 use App\Models\Comment;
-use App\Services\Twitter;
 use App\Services\Facebook;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,20 +15,11 @@ use Illuminate\Support\Facades\Auth;
 class PostController extends Controller
 {
 
-    public function exampleTwitter(Post $foo, Twitter $t)
-    {
+    public function exampleFacebook(Post $fb, Facebook $fbpost){
 
-        dd($t);
-        return "example";
+        $fbpost->postfb("i'm posting from exampleFacebook! ");
 
-    }
-
-    public function Facebook(Post $foo, Facebook $f)
-    {
-
-        dd($f);
-        return "example123";
-
+  
     }
 
     /**
