@@ -19,5 +19,8 @@ class Post extends Model
         return $this->hasMany('App\Models\Comment');
     }
 
-   
+
+    public function tags(){
+        return $this->belongsToMany(Tag::class, 'post_tags');         // php connect many to many
+    }
 }
