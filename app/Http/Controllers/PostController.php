@@ -101,7 +101,6 @@ class PostController extends Controller
         //figure out how to load comments for this post
         $comments = Comment::where('post_id', $id)->get();
         $tags = Post::find($id)->tags;
-        dump($tags);
         return view('posts.show', ['post' => $post, 'comments' => $comments, 'tags' => $tags]);
 
     }
