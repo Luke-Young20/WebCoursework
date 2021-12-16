@@ -19,9 +19,14 @@ class CreateAuthorsTable extends Migration
             $table->string('last_name');
             $table->string('type');
             $table->timestamps();
+            $table->bigInteger('user_id')->unsigned()->nullable();
 
+            $table->foreign('user_id')->references('id')->on('users')
+            ->onDelete('cascade')->ouUpdate('cascade'); 
         });
     }
+
+
 
     /**
      * Reverse the migrations.
