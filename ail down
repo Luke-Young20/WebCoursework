@@ -1,0 +1,275 @@
+[33mcommit 44bb52e3a1e2b66d51191b53e517016d22bf6926[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Luke-Young20 <lukegyoung1@gmail.com>
+Date:   Thu Dec 16 21:13:17 2021 +0000
+
+    Final touches, removing un-necessary code/comments
+
+[33mcommit f0d0597f4021de6051eba99406d83f6ab213bd42[m
+Author: Luke-Young20 <lukegyoung1@gmail.com>
+Date:   Thu Dec 16 20:20:10 2021 +0000
+
+    CSS changes
+
+[33mcommit 0ba9e08f63c55091023c714a29d707c2e4339c3f[m
+Author: Luke-Young20 <lukegyoung1@gmail.com>
+Date:   Thu Dec 16 17:39:35 2021 +0000
+
+    Fixed multi-level Auth
+
+[33mcommit 0891437d9d6b6034c0cb16153e9c01d4c6e6f6ce[m
+Author: Luke-Young20 <lukegyoung1@gmail.com>
+Date:   Thu Dec 16 16:39:09 2021 +0000
+
+    Admins can delete any post
+
+[33mcommit 7fcf6a9cab921b28f0e77b9abdf82131f78432b4[m
+Author: Luke-Young20 <lukegyoung1@gmail.com>
+Date:   Thu Dec 16 15:59:08 2021 +0000
+
+    added Facebook APIKEY
+
+[33mcommit c893e8d2bda514f42e3b4bba17f348901f7dae4c[m
+Author: Luke-Young20 <lukegyoung1@gmail.com>
+Date:   Thu Dec 16 15:16:19 2021 +0000
+
+    test images
+
+[33mcommit 10434061637a40521b4c188cca698dcc72ff864d[m
+Author: Luke-Young20 <lukegyoung1@gmail.com>
+Date:   Thu Dec 16 13:59:42 2021 +0000
+
+    Added tags many-many
+
+[33mcommit b5574998b6e3979943ceaac217f5de1d012c954a[m
+Author: Luke-Young20 <lukegyoung1@gmail.com>
+Date:   Thu Dec 16 13:10:47 2021 +0000
+
+    Added a many-many relationship: tags
+
+[33mcommit 93f4d925e1e3f8f18bb67c7bacca3663a9e5c8f0[m
+Author: Luke-Young20 <lukegyoung1@gmail.com>
+Date:   Thu Dec 16 12:23:20 2021 +0000
+
+    Added a 1:1 relationship
+
+[33mcommit 1caeda80e98ad66218870ecf99e89d9c6651f943[m
+Author: Luke-Young20 <lukegyoung1@gmail.com>
+Date:   Wed Dec 15 20:37:01 2021 +0000
+
+    commented out the not-working auth
+
+[33mcommit 92ae6412fb4e7fa1bcc5a956921bd639ded33151[m
+Author: Luke-Young20 <lukegyoung1@gmail.com>
+Date:   Wed Dec 15 20:36:10 2021 +0000
+
+    start of multi-auth
+
+[33mcommit eb2ff227318e7b627647bec5883c3cfd5a3129a4[m
+Author: Luke-Young20 <lukegyoung1@gmail.com>
+Date:   Wed Dec 15 18:12:57 2021 +0000
+
+    Update show.blade.php
+
+[33mcommit 00989ff720feaa3af8b4abbf7b2be4c997f6e0cd[m
+Author: Luke-Young20 <lukegyoung1@gmail.com>
+Date:   Wed Dec 15 17:56:40 2021 +0000
+
+    Added a last name to the authors
+
+[33mcommit c481cd0d0eb85475219bd93880f225f6129da80c[m
+Author: Luke-Young20 <lukegyoung1@gmail.com>
+Date:   Wed Dec 15 17:38:11 2021 +0000
+
+    css and route changes
+
+[33mcommit ae8b3ee11c8beaa7293d8eed9e0168cb39b82c0e[m
+Author: Luke-Young20 <lukegyoung1@gmail.com>
+Date:   Wed Dec 15 17:14:40 2021 +0000
+
+    added basic css
+
+[33mcommit 73d20e5ad4337afa22552a4ff08c61624da33d0e[m
+Author: Luke-Young20 <lukegyoung1@gmail.com>
+Date:   Wed Dec 15 16:45:43 2021 +0000
+
+    attempted comment deletion comment outed atm
+
+[33mcommit fbfecc79f74fb855aa34fe16cfa574a6f5dc946d[m
+Author: Luke-Young20 <lukegyoung1@gmail.com>
+Date:   Wed Dec 15 12:04:13 2021 +0000
+
+    added logout to index + dashboard now redirects to index
+
+[33mcommit a1070be19246731652d4f4fd68d4f45f463c4bc6[m
+Author: Luke-Young20 <lukegyoung1@gmail.com>
+Date:   Wed Dec 15 11:20:55 2021 +0000
+
+    Images are now a nice size
+
+[33mcommit f5d97e45e6631fd0e5984aeb58d4ee3d2294c197[m
+Author: Luke-Young20 <lukegyoung1@gmail.com>
+Date:   Wed Dec 15 11:14:56 2021 +0000
+
+    Can add images to posts
+
+[33mcommit 105c4632efaef9c9590768ca958dc289f7547253[m
+Author: Luke-Young20 <lukegyoung1@gmail.com>
+Date:   Tue Dec 14 21:53:36 2021 +0000
+
+    Only user who wrote the post can update
+
+[33mcommit 4efa9be239ee4831c9a1ffa469539d73189365df[m
+Author: Luke-Young20 <lukegyoung1@gmail.com>
+Date:   Tue Dec 14 21:21:21 2021 +0000
+
+    Boxes around comments
+
+[33mcommit 93d575fde8e1a34f05ff5f88924f4103e6555b50[m
+Author: Luke-Young20 <lukegyoung1@gmail.com>
+Date:   Tue Dec 14 21:01:15 2021 +0000
+
+    Added pagination
+
+[33mcommit 7f203844de3b3e1d260335f32f3bb16041e74bd3[m
+Author: Luke-Young20 <lukegyoung1@gmail.com>
+Date:   Tue Dec 14 15:02:36 2021 +0000
+
+    Removed redundant button code
+
+[33mcommit 9aada89af910cd7926b3b2812636e11ff9dfb311[m
+Author: Luke-Young20 <lukegyoung1@gmail.com>
+Date:   Tue Dec 14 14:49:45 2021 +0000
+
+    Comments working
+
+[33mcommit 3c060c59b97d6195a9ad487fd2bf64f8fafe5b37[m
+Author: Luke-Young20 <lukegyoung1@gmail.com>
+Date:   Tue Dec 14 14:05:28 2021 +0000
+
+    Updating working + start of comments
+
+[33mcommit 7b79ea166d944d0c2f07a0964810ae3802997caa[m
+Author: Luke-Young20 <lukegyoung1@gmail.com>
+Date:   Tue Dec 14 12:50:19 2021 +0000
+
+    Removed image stuff
+
+[33mcommit 10e21c7f9592b7697529c23bc19580e2e42b56cf[m
+Author: Luke-Young20 <lukegyoung1@gmail.com>
+Date:   Mon Dec 13 21:54:16 2021 +0000
+
+    start of adding an image to a post
+
+[33mcommit 9cf8925d1ec6b82b13b0cb6d949c47cc7fcb9350[m
+Author: Luke-Young20 <lukegyoung1@gmail.com>
+Date:   Mon Dec 13 17:31:43 2021 +0000
+
+    Can post comments; not fully functional as intended
+
+[33mcommit 288fe119e15723ee2f2210a6ed266f4cb715ce7e[m
+Author: Luke-Young20 <lukegyoung1@gmail.com>
+Date:   Mon Dec 13 16:28:10 2021 +0000
+
+    commented a method
+    
+    Commented out a method in postcontroller
+
+[33mcommit e629efc18ceb1532c02f792dbed391dcdb112b51[m
+Author: Luke-Young20 <lukegyoung1@gmail.com>
+Date:   Mon Dec 13 16:11:18 2021 +0000
+
+    Deleted update.blade.php
+    
+    Minor formatting changes and some route changes
+
+[33mcommit 85a193f6b57aa6d57aaf22cd8e9d10de0dba6dc3[m
+Author: Luke-Young20 <lukegyoung1@gmail.com>
+Date:   Mon Dec 13 13:21:05 2021 +0000
+
+    Removed ability to enter date of posting
+
+[33mcommit 35f2ed6f2bd78b234ec0c4eb74a26e96a0059199[m
+Author: Luke-Young20 <lukegyoung1@gmail.com>
+Date:   Mon Dec 13 13:07:45 2021 +0000
+
+    added timestamps other basic changes
+
+[33mcommit d93f8f00c1193c079fb051f33686b08f08cf428a[m
+Author: Luke-Young20 <lukegyoung1@gmail.com>
+Date:   Sun Dec 12 23:07:36 2021 +0000
+
+    updates no errors doesn't work
+    
+    New layout
+    Updating no errors but doesn't work
+    added commentcontroller
+
+[33mcommit ad6806ca109b89da710ba1ad5290031f4baa80fc[m
+Author: Luke-Young20 <lukegyoung1@gmail.com>
+Date:   Sun Dec 12 18:05:12 2021 +0000
+
+    Added a test edit.blade
+
+[33mcommit b8864510ba4be6cccb3ab039621401b296c70b84[m
+Author: Luke-Young20 <lukegyoung1@gmail.com>
+Date:   Sun Dec 12 17:18:20 2021 +0000
+
+    more changes to update Still doesn't work tho
+
+[33mcommit 5efb53f9fe0e87265c72fbdd56a26352c7dde4b3[m
+Author: Luke-Young20 <lukegyoung1@gmail.com>
+Date:   Sun Dec 12 16:34:37 2021 +0000
+
+    Trying to update posts (not working yet)
+    
+    Added new route
+
+[33mcommit 853ba8eb55b33d3f048efeca1357818668f78080[m
+Author: Luke-Young20 <lukegyoung1@gmail.com>
+Date:   Sun Dec 12 16:05:01 2021 +0000
+
+    Added middleware and post deletion protection
+    
+    Can only delete a post if it matches your currentID.
+    Added a CSS file
+    Removed the drop down box where you could pick an author
+
+[33mcommit fc7e0c8d3cda7ce06bc8385a3ea0d54c87732c90[m
+Author: Luke-Young20 <lukegyoung1@gmail.com>
+Date:   Sun Dec 12 15:02:41 2021 +0000
+
+    Added a twitter (facebook one doesn't work yet)
+
+[33mcommit f2a1e8a72c0c1f843bd0f9d42f8dce251f527a02[m
+Author: Luke-Young20 <lukegyoung1@gmail.com>
+Date:   Sun Dec 12 02:54:57 2021 +0000
+
+    added a secret route
+
+[33mcommit 1dd1861d4f4b50390588c56a6af316381c3e7228[m
+Author: Luke-Young20 <lukegyoung1@gmail.com>
+Date:   Sat Dec 11 21:17:49 2021 +0000
+
+    Added a route that only shows if logged in
+
+[33mcommit a8dcc2f5444a4c3c163e10ca552d58d1f81c3ec6[m
+Author: Luke-Young20 <lukegyoung1@gmail.com>
+Date:   Sat Dec 11 19:54:52 2021 +0000
+
+    Added a way to delete posts
+
+[33mcommit 8b39165f98b59841b8e25b6e00cf1c93a5ca5e8a[m
+Author: Luke-Young20 <lukegyoung1@gmail.com>
+Date:   Sat Dec 11 19:48:07 2021 +0000
+
+    Sorts authors alphabetically and in a list format
+    
+    Also will save the choice if the information is entered incorrectly
+
+[33mcommit 72a8dabfc40b3f1d80a26cd5a0e84152f8df8210[m
+Author: Luke-Young20 <lukegyoung1@gmail.com>
+Date:   Sat Dec 11 19:17:13 2021 +0000
+
+    Posts can be created and saved
+    
+    Also flashes a message to tell you it's been create
